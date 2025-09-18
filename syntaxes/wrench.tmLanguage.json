@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Wrench",
+  "scopeName": "source.wrench",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#types"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.wrench",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.wrench",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "name": "comment.block.wrench",
+              "match": "."
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.wrench",
+          "match": "\\b(if|else|while|do|for|switch|case|default|break|continue|return|yield)\\b"
+        },
+        {
+          "name": "keyword.other.wrench",
+          "match": "\\b(var|function|struct|new|export|enum)\\b"
+        },
+        {
+          "name": "constant.language.wrench",
+          "match": "\\b(true|false|null|undefined)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.wrench",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wrench",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.wrench",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wrench",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.wrench",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?[fF]?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.hexadecimal.wrench",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.wrench",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.wrench",
+          "match": "(=|\\+=|-=|\\*=|/=|%=|\\|=|&=|\\^=|>>=|<<=)"
+        },
+        {
+          "name": "keyword.operator.comparison.wrench",
+          "match": "(==|!=|>=|<=|>|<)"
+        },
+        {
+          "name": "keyword.operator.logical.wrench",
+          "match": "(\\|\\||&&|!)"
+        },
+        {
+          "name": "keyword.operator.bitwise.wrench",
+          "match": "(\\||&|\\^|>>|<<|~)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.wrench",
+          "match": "(\\+\\+|--|\\+|-|\\*|/|%)"
+        },
+        {
+          "name": "keyword.operator.other.wrench",
+          "match": "(::)"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.wrench",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()"
+        },
+        {
+          "name": "storage.type.function.wrench",
+          "begin": "\\b(function)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.wrench"
+            },
+            "2": {
+              "name": "entity.name.function.wrench"
+            }
+          },
+          "end": "(?=\\{)",
+          "patterns": [
+            {
+              "include": "#parameters"
+            }
+          ]
+        }
+      ]
+    },
+    "parameters": {
+      "patterns": [
+        {
+          "name": "variable.parameter.wrench",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "storage.type.wrench",
+          "begin": "\\b(var)\\s+",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.wrench"
+            }
+          },
+          "end": "(?=[;,=\\n])",
+          "patterns": [
+            {
+              "name": "variable.other.wrench",
+              "match": "[a-zA-Z_][a-zA-Z0-9_]*"
+            }
+          ]
+        },
+        {
+          "name": "variable.other.wrench",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.wrench",
+          "begin": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.wrench"
+            },
+            "2": {
+              "name": "entity.name.type.wrench"
+            }
+          },
+          "end": "(?=\\{)"
+        },
+        {
+          "name": "storage.type.wrench",
+          "begin": "\\b(enum)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.wrench"
+            },
+            "2": {
+              "name": "entity.name.type.wrench"
+            }
+          },
+          "end": "(?=\\{)"
+        }
+      ]
+    }
+  }
+}

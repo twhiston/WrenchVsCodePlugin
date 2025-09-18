@@ -1,0 +1,55 @@
+{
+  "name": "wrench-language-support",
+  "displayName": "Wrench Language Support",
+  "description": "Syntax highlighting and language support for the Wrench interpreted language",
+  "version": "1.0.0",
+  "publisher": "wrench-lang",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "wrench",
+    "embedded",
+    "scripting",
+    "syntax highlighting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jingoro2112/wrench"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "wrench",
+        "aliases": [
+          "Wrench",
+          "wrench"
+        ],
+        "extensions": [
+          ".wr",
+          ".wrench"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wrench",
+        "scopeName": "source.wrench",
+        "path": "./syntaxes/wrench.tmLanguage.json"
+      }
+    ]
+  },
+  "main": "./extension.js",
+  "scripts": {
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0"
+  }
+}

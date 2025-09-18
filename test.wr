@@ -1,0 +1,55 @@
+// Sample Wrench code to test syntax highlighting
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+var result = fibonacci(10);
+
+// Multi-line comment
+/*
+   This is a test of the Wrench language
+   with various syntax elements
+*/
+
+struct Point {
+    var x;
+    var y;
+}
+
+enum Color {
+    RED,
+    GREEN,
+    BLUE
+}
+
+function main() {
+    var point = new Point();
+    point.x = 5.0;
+    point.y = 10;
+
+    var numbers = [1, 2, 3, 4, 5];
+
+    for (var i = 0; i < numbers.length(); ++i) {
+        if (numbers[i] % 2 == 0) {
+            // Even number
+            numbers[i] *= 2;
+        } else {
+            // Odd number
+            numbers[i] += 1;
+        }
+    }
+
+    var message = "Hello, Wrench!";
+    var escaped = "Line 1\nLine 2\t\"quoted\"";
+
+    switch (point.x) {
+        case 5:
+            return "Five";
+            break;
+        default:
+            return "Other";
+    }
+}
