@@ -1,0 +1,30 @@
+// Test: number and string literals for syntax highlighting
+// Expected: numbers highlighted as constants, strings as strings
+
+// integers
+var dec = 42;
+var zero = 0;
+var negative = -100;
+
+// hexadecimal
+var hex1 = 0xFF;
+var hex2 = 0x1A2B;
+var hex3 = 0xDEAD;
+
+// floats
+var pi = 3.14159;
+var small = 0.001;
+var big = 1500000.0;
+
+// strings - double quoted
+var str1 = "hello world";
+var str2 = "with \"escaped\" quotes";
+var str3 = "newline\ntab\t";
+var str4 = "backslash\\path";
+
+// all strings use double quotes in wrench
+
+// empty string
+var empty = "";
+
+println("syntax_literals: PASS");

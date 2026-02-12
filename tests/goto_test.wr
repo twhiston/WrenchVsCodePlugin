@@ -1,0 +1,15 @@
+// goto demo: labels are defined with "name:" and jumped to with "goto name;"
+
+// forward goto — skip over code
+println("1: start");
+goto skip_middle;
+println("this is skipped");
+skip_middle:
+println("2: jumped past skipped line");
+
+// backward goto — simple loop
+var count = 0;
+loop_start:
+count = count + 1;
+if (count < 5) { goto loop_start; }
+println("3: looped " + count + " times");

@@ -1,0 +1,12 @@
+// Test: compiler diagnostics on clean file
+// Expected: no errors, no red squiggles
+
+var x = 10;
+var y = 20;
+
+function add(a, b) {
+    return a + b;
+}
+
+var result = add(x, y);
+println("result: " + result);

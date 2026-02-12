@@ -19,6 +19,9 @@
       "include": "#operators"
     },
     {
+      "include": "#library-functions"
+    },
+    {
       "include": "#functions"
     },
     {
@@ -52,15 +55,19 @@
       "patterns": [
         {
           "name": "keyword.control.wrench",
-          "match": "\\b(if|else|while|do|for|switch|case|default|break|continue|return|yield)\\b"
+          "match": "\\b(if|else|while|do|for|switch|case|default|break|continue|return|yield|goto)\\b"
         },
         {
           "name": "keyword.other.wrench",
-          "match": "\\b(var|function|struct|new|export|enum)\\b"
+          "match": "\\b(var|function|struct|new|export|enum|unit)\\b"
         },
         {
           "name": "constant.language.wrench",
           "match": "\\b(true|false|null|undefined)\\b"
+        },
+        {
+          "name": "support.type.wrench",
+          "match": "\\b(int|float)\\b"
         }
       ]
     },
@@ -131,6 +138,24 @@
         {
           "name": "keyword.operator.other.wrench",
           "match": "(::)"
+        }
+      ]
+    },
+    "library-functions": {
+      "patterns": [
+        {
+          "match": "\\b(math|str|io|std|sys|msg|debug|array|hash|list|queue|stack)(::)([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "support.class.wrench"
+            },
+            "2": {
+              "name": "keyword.operator.other.wrench"
+            },
+            "3": {
+              "name": "support.function.wrench"
+            }
+          }
         }
       ]
     },
@@ -208,17 +233,14 @@
           "end": "(?=\\{)"
         },
         {
+          "comment": "Wrench enums are anonymous: enum { VALUE, ... }",
           "name": "storage.type.wrench",
-          "begin": "\\b(enum)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
-          "beginCaptures": {
+          "match": "\\b(enum)\\s*(?=\\{)",
+          "captures": {
             "1": {
               "name": "keyword.other.wrench"
-            },
-            "2": {
-              "name": "entity.name.type.wrench"
             }
-          },
-          "end": "(?=\\{)"
+          }
         }
       ]
     }

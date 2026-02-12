@@ -1,0 +1,29 @@
+// Test: run file command (Ctrl+F5 / play button)
+// Expected: output appears in the "Wrench" terminal
+
+println("=== Run Output Test ===");
+
+// basic output
+print("no newline ");
+println("with newline");
+
+// string concatenation in output
+var name = "wrench";
+println("hello " + name + "!");
+
+// numeric output
+var x = 42;
+var pi = 3.14;
+println("int: " + x);
+print("float: ");
+println(pi);
+
+// expression result
+println("2 + 2 = " + (2 + 2));
+
+// loop output
+for (var i = 0; i < 3; ++i) {
+    println("  loop iteration " + i);
+}
+
+println("=== DONE ===");

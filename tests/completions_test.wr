@@ -1,0 +1,24 @@
+// Test: auto-completion features
+// How to test manually:
+//
+// 1. Keywords: type "whi" and expect "while" to appear in completions
+// 2. Namespaces: type "math" and expect "math" module to appear,
+//    selecting it should insert "math::" and re-trigger suggestions
+// 3. Library functions: type "math::" and expect sin, cos, sqrt etc.
+//    type "str::" and expect strlen, toupper, trim etc.
+// 4. Documentation: selecting a completion should show its doc string
+//
+// Uncomment lines below one at a time to test completions:
+
+// math::
+// str::
+// io::
+// std::
+// sys::
+// array::
+// hash::
+// list::
+// queue::
+// stack::
+
+println("completions_test: open this file and test completions manually");

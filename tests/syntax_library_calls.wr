@@ -1,0 +1,53 @@
+// Test: namespaced library function highlighting
+// Expected: namespace in support.class, :: in operator, function in support.function
+
+// math library
+var angle = math::deg2rad(90);
+var s = math::sin(angle);
+var c = math::cos(0);
+var sq = math::sqrt(16);
+var pw = math::pow(2, 8);
+var fl = math::floor(3.7);
+var cl = math::ceil(3.2);
+var ab = math::abs(-5);
+
+// string library
+var len = str::strlen("hello");
+var upper = str::toupper("hello");
+var lower = str::tolower("HELLO");
+var trimmed = str::trim("  hi  ");
+var sub = str::mid("hello world", 6, 5);
+var joined = str::concat("foo", "bar");
+
+// std library
+var t = std::time();
+std::srand(t);
+var r = std::rand();
+
+// io library (just checking highlighting, not running)
+// io::readFile("path")
+// io::writeFile("path", "data")
+// io::open("path", 0)
+
+// container libraries (checking highlighting)
+// array::count(arr)
+// array::clear(arr)
+// hash::exists(h, "key")
+// hash::add(h, "key", "val")
+// list::push(l, val)
+// list::pop(l)
+// queue::push(q, val)
+// queue::peek(q)
+// stack::push(s, val)
+// stack::pop(s)
+
+// sys library
+var isFunc = sys::isFunction("println");
+
+// msg library (just checking highlighting)
+// msg::write("data")
+// msg::read()
+// msg::peek()
+// msg::clear()
+
+println("syntax_library_calls: PASS");

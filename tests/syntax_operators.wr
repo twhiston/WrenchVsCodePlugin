@@ -1,0 +1,51 @@
+// Test: all operators for syntax highlighting
+// Expected: operators highlighted with operator scope
+
+var a = 10;
+var b = 3;
+var c = 0;
+
+// arithmetic
+c = a + b;
+c = a - b;
+c = a * b;
+c = a / b;
+c = a % b;
+a++;
+b--;
+
+// comparison
+var t = (a == b);
+t = (a != b);
+t = (a > b);
+t = (a < b);
+t = (a >= b);
+t = (a <= b);
+
+// logical
+t = (true && false);
+t = (true || false);
+t = !true;
+
+// bitwise
+c = a | b;
+c = a & b;
+c = a ^ b;
+c = a >> 1;
+c = a << 1;
+c = ~a;
+
+// assignment operators
+c = 10;
+c += 5;
+c -= 2;
+c *= 3;
+c /= 2;
+c %= 7;
+c |= 1;
+c &= 0xFF;
+c ^= 3;
+c >>= 1;
+c <<= 2;
+
+println("syntax_operators: PASS");

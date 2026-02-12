@@ -1,0 +1,28 @@
+// Test: comment styles for syntax highlighting
+// Expected: comments highlighted with comment scope
+
+// this is a single-line comment
+
+/* this is a
+   multi-line block comment
+   spanning several lines */
+
+var x = 10; // inline comment after code
+
+/*
+ * Javadoc-style block comment
+ * often used for function docs
+ */
+function documented(a, b) {
+    return a + b;
+}
+
+//#region Folding Region
+var inside_region = true;
+//#endregion
+
+//region Alt Folding
+var inside_alt_region = true;
+//endregion
+
+println("syntax_comments: PASS");

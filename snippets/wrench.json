@@ -1,0 +1,115 @@
+{
+  "Function Declaration": {
+    "prefix": ["fn", "function"],
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Function declaration"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": [
+      "function main() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Main function entry point"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (var ${1:i} = ${2:0}; ${1:i} < ${3:count}; ++${1:i}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For loop with counter"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Do-While Loop": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$0",
+      "} while (${1:condition});"
+    ],
+    "description": "Do-while loop"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If-Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$2",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "Switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch-case statement"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name} {",
+      "\tvar ${2:field};",
+      "\t$0",
+      "}"
+    ],
+    "description": "Struct declaration"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum {",
+      "\t${2:VALUE},",
+      "\t$0",
+      "}"
+    ],
+    "description": "Enum declaration"
+  },
+  "Variable Declaration": {
+    "prefix": "var",
+    "body": "var ${1:name} = ${0:value};",
+    "description": "Variable declaration"
+  },
+  "Print": {
+    "prefix": "print",
+    "body": "print(${0:value});",
+    "description": "Print to output"
+  },
+  "Println": {
+    "prefix": "println",
+    "body": "println(${0:value});",
+    "description": "Print with newline"
+  }
+}

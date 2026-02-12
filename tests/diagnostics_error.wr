@@ -1,0 +1,6 @@
+// Test: compiler diagnostics
+// Expected: red squiggly on the line with the undeclared variable
+// To test: save this file and check for error markers
+
+// This line should produce WR_ERR_var_not_seen_before_label
+undeclared_var = 42;

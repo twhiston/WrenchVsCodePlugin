@@ -1,0 +1,91 @@
+// Test: all keywords and control flow for syntax highlighting
+// Expected: each keyword should be highlighted as a keyword
+
+// enum (anonymous — defines compile-time constants)
+enum {
+    RED,
+    GREEN,
+    BLUE
+}
+
+// struct declaration
+struct Point {
+    var x;
+    var y;
+}
+
+// variable declaration
+var x = 10;
+var y = 20;
+var name = "wrench";
+
+// constants
+var a = true;
+var b = false;
+var c = null;
+
+// if / else
+if (x > 5) {
+    println("x is big");
+} else {
+    println("x is small");
+}
+
+// while loop
+var w = 0;
+while (w < 3) {
+    w = w + 1;
+}
+
+// do-while loop
+var d = 0;
+do {
+    d = d + 1;
+} while (d < 3);
+
+// for loop
+for (var i = 0; i < 5; ++i) {
+    // loop body
+}
+
+// switch / case / default
+var val = 2;
+switch (val) {
+    case 1:
+        println("one");
+        break;
+    case 2:
+        println("two");
+        break;
+    default:
+        println("other");
+        break;
+}
+
+// function declaration and return
+function add(a, b) {
+    return a + b;
+}
+
+// goto and labels
+goto skip;
+println("skipped");
+skip:
+
+// struct instantiation with new
+var p = new Point;
+p.x = 10;
+p.y = 20;
+
+// export
+export function exported_func() {
+    return 1;
+}
+
+// break and continue in loop
+for (var i = 0; i < 10; ++i) {
+    if (i == 3) { continue; }
+    if (i == 7) { break; }
+}
+
+println("syntax_keywords: PASS");

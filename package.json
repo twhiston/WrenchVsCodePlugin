@@ -2,8 +2,9 @@
   "name": "wrench-language-support",
   "displayName": "Wrench Language Support",
   "description": "Syntax highlighting and language support for the Wrench interpreted language",
-  "version": "1.0.0",
+  "version": "1.1.5",
   "publisher": "wrench-lang",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -41,8 +42,51 @@
         "scopeName": "source.wrench",
         "path": "./syntaxes/wrench.tmLanguage.json"
       }
-    ]
+    ],
+    "snippets": [
+      {
+        "language": "wrench",
+        "path": "./snippets/wrench.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "wrench.runFile",
+        "title": "Wrench: Run File",
+        "icon": "$(play)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "wrench.runFile",
+        "key": "ctrl+f5",
+        "mac": "ctrl+f5",
+        "when": "editorLangId == wrench"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "wrench.runFile",
+          "when": "editorLangId == wrench",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Wrench",
+      "properties": {
+        "wrench.compilerPath": {
+          "type": "string",
+          "default": "wrench",
+          "description": "Path to the wrench compiler executable. Defaults to 'wrench' (auto-detected on PATH)."
+        }
+      }
+    }
   },
+  "activationEvents": [
+    "onLanguage:wrench"
+  ],
   "main": "./extension.js",
   "scripts": {
     "package": "vsce package --no-dependencies"

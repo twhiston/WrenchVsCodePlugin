@@ -1,0 +1,78 @@
+// Test: function declarations and struct/enum definitions for outline support
+// Expected: functions and structs appear in the Outline panel
+
+// enums are anonymous in wrench — they define compile-time constants
+enum {
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST
+}
+
+enum {
+    IDLE,
+    RUNNING,
+    JUMPING,
+    FALLING
+}
+
+// enums with explicit values
+enum {
+    LOW = 10,
+    MEDIUM = 50,
+    HIGH = 100
+}
+
+struct Vector2 {
+    var x;
+    var y;
+}
+
+struct Vector3 {
+    var x;
+    var y;
+    var z;
+}
+
+struct Player {
+    var name;
+    var health;
+    var pos;
+}
+
+function simple() {
+    return 1;
+}
+
+function with_params(a, b, c) {
+    return a + b + c;
+}
+
+function recursive(n) {
+    if (n <= 1) { return n; }
+    return recursive(n - 1) + recursive(n - 2);
+}
+
+// struct instantiation and field access
+var v = new Vector2;
+v.x = 10;
+v.y = 20;
+
+var p = new Player;
+p.name = "hero";
+p.health = 100;
+p.pos = new Vector2;
+p.pos.x = 0;
+p.pos.y = 0;
+
+// function calls
+var result = with_params(1, 2, 3);
+var fib = recursive(10);
+
+// enum constant usage
+println("direction: " + NORTH);
+println("state: " + RUNNING);
+println("level: " + HIGH);
+println("functions: " + result);
+println("fib(10): " + fib);
+println("syntax_functions_structs: PASS");
